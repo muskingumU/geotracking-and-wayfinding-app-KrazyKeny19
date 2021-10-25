@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "MapProject",
+    "slug": "MapProject",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "MapProject"
+}
