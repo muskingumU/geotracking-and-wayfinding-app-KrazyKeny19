@@ -2,30 +2,33 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MapView from 'react-native-maps';
 import {Marker, UrlTile} from 'react-native-maps';
 import Geojson from 'react-native-geojson';
+import homeScreen from './HomeScreen';
+import cLocation from './currentLocation';
+import muskingum from './muskingum';
+
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-
-    const [mapRegion, setmapRegion] = useState({
-        latitude: 39.99713282460591,
-        longitude: -81.73703643102041,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
-    });
     return(
-        <View style={StyleSheet.container}>
-            <MapView
-                style={{ alignSelf: 'stretch', height:'70%'}}
-                region={mapRegion}>
-                  <Marker
-                    pinColor="green"
-                    title="Hey!!"
-                    description="You there!"
-                    coordinate={{latitude: 39.99713282460591, longitude: -81.73703643102041}} />
-                </MapView>
-        </View>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+            name="Home Screen"
+            component={homeScreen}/>
+            <Stack.Screen
+            name="Current Location"
+            component={cLocation}/>
+            <Stack.Screen
+            name="Muskingum University"
+            component={muskingum}/>
+          </Stack.Navigator>
+        </NavigationContainer>
     )
 }
 
