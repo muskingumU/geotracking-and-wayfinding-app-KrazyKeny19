@@ -4,7 +4,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as Location from 'expo-location';
 import MapView from 'react-native-maps';
 import {Marker,UrlTile} from 'react-native-maps';
-import Geojson from 'react-native-geojson';
 
 const cLocation = ({ navigation }) => {
 

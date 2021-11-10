@@ -3,7 +3,6 @@ import {SafeAreaView, View, Image, StyleSheet, Dimensions, Touchable, Text, Flat
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import Geojson from 'react-native-geojson';
 
 
 

@@ -6,7 +6,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MapView from 'react-native-maps';
 import {Marker, UrlTile} from 'react-native-maps';
-import Geojson from 'react-native-geojson';
 import homeScreen from './HomeScreen';
 import cLocation from './currentLocation';
 import muskingum from './muskingum';
