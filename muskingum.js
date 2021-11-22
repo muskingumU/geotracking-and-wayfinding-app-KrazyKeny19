@@ -1,17 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import {SafeAreaView, View, Image, StyleSheet, Dimensions, Touchable, Text, FlatList, Button} from 'react-native';
+import {SafeAreaView, View, Image, StyleSheet, Dimensions, Touchable, Text, FlatList, Button, Alert} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-
-
-
 
 const muskingum = ({navigation}) => {
 
   const [locations, setLocations] = useState([]);
   const [errorMsg, setErrorMsg] = useState(null);
-  const [selectedBuilding, setselectedBuilding] = useState(null);
+  const [selectedBuilding, setselectedBuilding] = useState(0);
 
   var buildings =  [
     {
@@ -231,7 +228,6 @@ const muskingum = ({navigation}) => {
           timeInterval: 10000,
         distanceInterval: 2},
         (location) => {
-         // Alert.alert(location.stringify());
           let temp = locations
           temp.push({latitude:location.coords.latitude, longitude:location.coords.longitude})
           setLocations(temp);
@@ -243,8 +239,8 @@ const muskingum = ({navigation}) => {
     const [mapRegion, setmapRegion] = useState({
         latitude: 39.99805700390604,
         longitude: -81.73781823561002,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
+        latitudeDelta: 0.006,
+        longitudeDelta: 0.006,
       });  
     const renderBuilding= ({item})=> {
       const backgroundColor1 = item.id === selectedBuilding ?
@@ -283,6 +279,7 @@ const muskingum = ({navigation}) => {
             renderItem={renderBuilding}
             keyExtractor={(item) => item.id}
             extraData = {selectedBuilding} />
+
         </View>
     );
 };
@@ -299,6 +296,6 @@ const styles = StyleSheet.create({
       marginHorizontal: 16,
     },
     title:{
-      fontSize:32,
+      fontSize:15,
     },
   });
