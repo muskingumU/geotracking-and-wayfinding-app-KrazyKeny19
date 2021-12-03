@@ -1,0 +1,12 @@
+com/mapproject/MainActivity.java
+ com.mapproject.MainActivity
+ com.mapproject.MainActivity$1
+com/mapproject/MainApplication.java
+ com.mapproject.MainApplication
+ com.mapproject.MainApplication$1
+com/mapproject/BuildConfig.java
+ com.mapproject.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/mapproject/generated/BasePackageList.java
+ com.mapproject.generated.BasePackageList
